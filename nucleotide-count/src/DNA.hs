@@ -3,8 +3,9 @@ module DNA (nucleotideCounts, Nucleotide(..)) where
 import Data.Map (Map)
 import qualified Data.Map as M
 import Text.Read
+import Control.Applicative
 
-data Nucleotide = A | C | G | T deriving (Eq, Ord, Show, Re``ad)
+data Nucleotide = A | C | G | T deriving (Eq, Ord, Show, Read)
 
 nucleotideCounts :: String -> Either String (Map Nucleotide Int)
 nucleotideCounts =
@@ -20,3 +21,4 @@ reducer (Left _) _ = Left "Error"
 
 emptyMap :: Map Nucleotide Int
 emptyMap = M.fromList [(A,0),(C,0),(G,0),(T,0)]
+
