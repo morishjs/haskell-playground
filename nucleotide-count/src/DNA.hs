@@ -21,4 +21,3 @@ reducer (Left _) _ = Left "Error"
 
 emptyMap :: Map Nucleotide Int
 emptyMap = M.fromList [(A,0),(C,0),(G,0),(T,0)]
-
